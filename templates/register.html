@@ -5,8 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <h1>Register</h1>
+    <div class="login-container">
+        <form action="/register" method="post">
+            <h1>Register</h1>
+            <input class="name" placeholder="name" type="text" id="name" name="name"required>
+            <input  class="email" placeholder="email"type="text" id="email" name="email"required>
+            <input class="password" placeholder="password" type="text" id="password" name="password" required>
+            <button class="btn" type="submit">Register</button>
+        </form>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+    </div>
 </body>
 </html>
