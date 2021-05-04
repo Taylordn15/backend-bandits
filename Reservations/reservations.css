@@ -1,0 +1,23 @@
+body {
+	/* display: grid; */
+	height: 100vh;
+	/* grid-template-columns: 1fr, 1fr;
+	grid-template-rows: 1fr, 1fr;
+	grid-template-areas:
+		"navbar, navbar"
+		"sidebar, displaydiv"; */
+}
+#navbar {
+	height: 10%;
+	background-color: coral;
+}
+/* #sidenav {
+	width: 20%;
+	height: 85%;
+	background-color: burlywood;
+} */
+#displaydiv {
+	width: 100%;
+	height: 100%;
+	background-color: cadetblue;
+}
