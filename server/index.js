@@ -11,6 +11,11 @@ const flash = require("express-flash");
 const session = require("express-session");
 const es6Renderer = require("express-es6-template-engine");
 const initializedPassport = require("./passport-config")
+const {createClient} = require("@supabase/supabase-js")
+const supabase = createClient(
+    "https://qaozkethcihyhwxqwyyb.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyMDA2NTU3NSwiZXhwIjoxOTM1NjQxNTc1fQ.HIBZbZyYMY7Jc1d4kxYVkESzL55qG7RqMPMzoWA1oFI"
+);
 
 initializedPassport(
     passport,
@@ -58,11 +63,12 @@ function checkIfUserIsLoggedIn( req, res, next) {
     next()
 }
 
+//welcome page
 app.get("/", checkAuthenticated, (req, res) => {
     res.render("welcome", {locals: {name: req.user.name}});
 });
 
-
+//login page
 app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
     res.render("login");
 });
@@ -76,6 +82,7 @@ app.post(
     })
 );
 
+//register page
 app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
     res.render("register");
 });
@@ -104,6 +111,38 @@ app.post ("/register", async (req, res) => {
 app.post("/logout", (req, res) => {
     req.logOut()
     res.redirect("/login");
+});
+
+//homepage
+app.get("/home", async (req, res) => {
+    res.render("home.html")
+});
+
+//reservations page
+app.post("/reservation", async (req, res) => {
+    const { data, error } = await supabase
+    .from("Reservation")
+    .insert([
+      {
+        Name: "Joey",
+        Date: "2021-02-04",
+        Restaurant: "Pappadeuxs",
+        Party_Size: 22,
+      },
+    ]);
+    console.log(data);
+  });
+  
+app.get("/reservation", async (req, res) => {
+    const { data, error } = await supabase
+    .from("Restaurant")
+    .select()
+    console.log(data)
+});
+
+//profile page
+app.get("/home", async (req, res) => {
+    res.render("profile")
 });
 
 app.listen(PORT, () => {
