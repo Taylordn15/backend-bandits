@@ -27,7 +27,7 @@ initializedPassport(
 
 // -- Set Port -- //
 
-const PORT = 5321;
+const PORT = 5322;
 
 // -- Middleware -- //
 
@@ -48,92 +48,15 @@ app.engine("html", es6Renderer);
 app.set("views", "../views");
 app.set("view engine", "html");
 
-// -- Access Form -- //
-
-app.use(express.urlencoded({ extended: false }));
-
-function checkAuthenticated(req, res, next) {
-	if (req.isAuthenticated()) {
-		return next();
-	}
-	res.redirect("/login");
-}
-
-function checkIfUserIsLoggedIn(req, res, next) {
-	if (req.isAuthenticated()) {
-		return res.redirect("/");
-	}
-	next();
-}
-
-// -- Routes -- //
-
-// - Welcome && Login Page(s) - //
-
-app.get("/", checkAuthenticated, (req, res) => {
-	res.render("welcome", { locals: { name: req.user.name } });
-});
-
-app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
-	res.render("login");
-});
-
-app.post(
-	"/login",
-	passport.authenticate("local", {
-		successRedirect: "/",
-		failureRedirect: "/login",
-		failureFlash: true,
-	})
-);
-
-// - Register Page - //
-
-app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
-	res.render("register");
-});
-
-app.post("/register", async (req, res) => {
-	const user = {
-		id: Date.now().toString(),
-		name: req.body.name,
-		email: req.body.email,
-		password: req.body.password,
-	};
-	console.log(user);
-	const { data, error } = await supabase.from("User").insert(user);
-	console.log(data);
-});
-
-app.post("/logout", (req, res) => {
-	req.logOut();
-	res.redirect("/login");
-});
-
-// - Home Page - //
-
-app.get("/home", async (req, res) => {
-	res.render("home.html");
-});
-
 // - Reservation(s) Page - //
 
 app.post("/reservation", async (req, res) => {
-	const { yelpinfo, error } = await supabase
-		.from("Restaurant")
-		.insert(yelpinfo);
-	console.log(data);
+	const { yelpinfo } = await supabase.from("Restaurant").insert(yelpinfo);
 });
 
 app.get("/reservation", async (req, res) => {
 	const { data, error } = await supabase.from("Restaurant").select();
 	console.log(data);
-});
-
-// - Profile Page - //
-
-app.get("/home", async (req, res) => {
-	res.render("profile");
 });
 
 // - Listening Post - //
