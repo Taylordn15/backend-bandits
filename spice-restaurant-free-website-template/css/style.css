@@ -69,10 +69,10 @@ textarea {
 	margin: 0;
 	padding: 0;
 }
-ul.withArrow {
+/* ul.withArrow {
 }
 ul.withArrow li {
-}
+} */
 ul.withArrow li span {
 	margin-right: 10px;
 
@@ -236,8 +236,8 @@ header .navbar-nav > li > a {
 	transition: all 0.3s ease;
 }
 
-.services {
-}
+/* .services {
+} */
 .dishes {
 	background: #8bc34a;
 
@@ -842,8 +842,8 @@ form#commentform textarea {
 	//text-align: justify; */
 }
 
-.about-image img {
-}
+/* .about-image img {
+} */
 
 .about-text ul {
 	margin-top: 30px;
@@ -1415,7 +1415,7 @@ ul.team-detail li ul.social-network li i {
 	margin-bottom: 20px;
 	display: inline-block;
 	width: 100%;
-	float: left;
+	/* float: left; */
 	background: #ffffff;
 	line-height: 30px;
 	border-left: 2px solid #8bc34a;
