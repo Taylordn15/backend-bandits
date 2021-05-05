@@ -17,15 +17,21 @@ const supabase = createClient(
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyMDA2NTU3NSwiZXhwIjoxOTM1NjQxNTc1fQ.HIBZbZyYMY7Jc1d4kxYVkESzL55qG7RqMPMzoWA1oFI"
 );
 
+async function getUser(email) {
+    const { users, error } = await supabase
+    .from("User")
+    .select()
+    console.log(users)
+    // const validUser = users.find(user => user.Email === email)
+    // return validUser
+}
+
 initializedPassport(
     passport,
-    (email) => users.find((user) => user.email === email),
-    (id) => users.find((user) => user.id === id)
+    getUser
 );
 //PORT
 const PORT = 5321;
-//this is mimicing a database
-const users = [];
 
 //middleware
 app.use(express.static("../public"));
@@ -39,6 +45,7 @@ app.use(
     saveUninitialized: false,
     })
 );
+app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -46,8 +53,7 @@ app.engine("html", es6Renderer);
 app.set("views", "../views");
 app.set("view engine", "html");
 
-// access our form information inside of our req
-app.use(express.urlencoded({ extended: false }));
+
 
 function checkAuthenticated( req, res, next) {
     if(req.isAuthenticated()){
@@ -88,38 +94,24 @@ app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-    const user = {
-        id: Date.now().toString(),
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-    };
-    console.log(user)
-    const { data, error } = await supabase
-    .from("User")
-    .insert(user);
-    console.log(data);
+    try {
+        const salt = await bcrypt.genSalt();
+        const hashedPassword = await bcrypt.hash(req.bodpassword, salt);
+        const { data, error } = await supabase
+        .from("User")
+        .insert([
+            {
+                Name: req.body.name,
+                Email: req.body.email,
+                Password: hashedPassword,
+            }
+        ]);
+        console.log(data);
+        res.status(200).redirect("/login");
+    } catch (err) {
+        res.status(401).redirect("/register");
+    }
   });
-// app.post ("/register", async (req, res) => {
-//     try {
-//         const salt = await bcrypt.genSalt();
-//         const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
-//         const user = {
-//             id: Date.now().toString(),
-//             name: req.body.name,
-//             email: req.body.email,
-//             password: hashedPassword,
-//         };
-//         //sending the user to our array "database"
-//         users.push(user);
-//         //User.Create(user)
-//         console.log(users);
-//         res.status(200).redirect("/login");
-//     } catch (error) {
-//         res.status(401).redirect("/register");
-//     }
-// });
 
 app.post("/logout", (req, res) => {
     req.logOut()
