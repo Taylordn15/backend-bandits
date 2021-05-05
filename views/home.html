@@ -43,7 +43,6 @@
 						<ul class="nav navbar-nav">
 							<li class="active"><a class="waves-effect waves-dark" href="home.html">Home</a></li> 
 							<li><a class="waves-effect waves-dark" href="reservations.html">Reservations</a></li>
-							<li><a class="waves-effect waves-dark" href="profile.html">Profile</a></li>
 							<li><a class="waves-effect waves-dark" href="login.html">Sign Out</a></li>
 						</ul>
 					</div>
@@ -54,81 +53,34 @@
 				<div class="container">
 				 <div class="row">
 					<div class="col-md-12">
-						<div class="aligncenter"><h2 class="aligncenter">Find food near you!</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, <br/>doloribus omnis minus ovident, doloribus omnis minus temporibus perferendis nesciunt..</div>
+						<div class="aligncenter"><h2 class="aligncenter">Find food near you!</h2></div>
 						<form method ="post" action="/reservation" class="form">
-							<input type="text" placeholder=" City/State" />
-							<button type="submit">Submit</button>
+							<input class = "location" type="text" placeholder=" City/State" />
+							<button onclick="(e) => sendLocation(e)" type="submit">Submit</button>
 						</form>
 						<br/>
 					</div>
 				</div>
-				<!-- <h1>Find food near you!</h1>
-			<form class="form">
-				<input type="text" placeholder=" City/State" />
-				<button type="submit">Submit</button>
-			</form> -->
-			
-			<div class="row service-v1 margin-bottom-40">
-					<div class="col-md-4 md-margin-bottom-40">
-							<div class="card small">
-								<div class="card-image">
-									 <img class="img-responsive" src="img/service1.jpg" alt="">  
-									<span class="card-title">Cobb Salad</span>
-								</div>
-								<div class="card-content">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt
-									</p>
-								</div>
-							</div>        
-					</div>
-					   <div class="col-md-4 md-margin-bottom-40">
-							<div class="card small">
-								<div class="card-image">
-									 <img class="img-responsive" src="../spice-restaurant-free-website-template/img/service2.jpg" alt="">  
-									<span class="card-title">Twinkies</span>
-								</div>
-								<div class="card-content">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt
-									</p>
-								</div>
-							</div>        
-					</div>
-					   <div class="col-md-4 md-margin-bottom-40">
-							<div class="card small">
-								<div class="card-image">
-									 <img class="img-responsive" src="img/service3.jpg" alt="">  
-									<span class="card-title">Pot roast</span>
-								</div>
-								<div class="card-content">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt
-									</p>
-								</div>
-							</div>        
-					</div> 
-				</div>
-				</div>
 				</section>
-		<!-- <div id="main">
-			<h1>Find food near you!</h1>
-			<form class="form">
-				<input type="text" placeholder=" City/State" />
-				<button type="submit">Submit</button>
-			</form>
-		</div>
-		<div id="featured">
-			<h1>Featured Restaurants</h1>
-		</div> -->
+				<div id="reservation-history">
+					<h1>Reservations</h1>
+					<dl>
+						${reservations.map(reservation =>
+							`
+							<p>Restaurant Name</p>
+							<dt>${restaurant.name</dt>
+							<p>Date</p>
+							<dt>${reservation.date}</dt>
+							<p>Time</p>
+							<dt>${reservation.time}</dt>
+							<p>Party Size</p>
+							<dt>${reservation.party}</dt>
+							`
+						).join("")}
+						<button>Edit</button>
+						<button>Delete</button>
+						</dl>
+				</div>
 	</body>
+	<script src="../server/home.js"></script>
 </html>
