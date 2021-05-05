@@ -27,7 +27,7 @@ initializedPassport(
 
 // -- Set Port -- //
 
-const PORT = 5321;
+const PORT = 5322;
 
 // -- Middleware -- //
 
