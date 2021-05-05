@@ -13,6 +13,9 @@ const getRestaurants = async () => {
 		}
 	);
 	const restaurantDataJson = await getRestaurantData.json();
+	const bodySpec = restaurantDataJson[0].businesses.name;
 	console.log(restaurantDataJson);
 };
 console.log(getRestaurants());
+
+module.exports = yelpinfo;
