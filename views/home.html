@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- <link rel="stylesheet" href="../public/stylesheets/home.css" /> -->
+		<link rel="stylesheet" href="../public/stylesheets/home.css" />
 		<link
 			rel="stylesheet"
 			href="../spice-restaurant-free-website-template/css/style.css"
@@ -51,37 +51,37 @@
 		</header>
 			<section class="dishes">
 				<div class="container">
-				 <div class="row">
+				 <!-- <div class="row"> -->
 					<div class="col-md-12">
-						<div class="aligncenter"><h2 class="aligncenter">Find food near you!</h2></div>
-						<form method ="post" class="form">
-						
-							<a href="/reservations" type="button">Let's Go</a>
-						</form>
+						<div class="aligncenter"><h2 class="aligncenter">Find food near you!</h2>
+							<a id="main-button" href="/reservations" type="button">Let's Go!</a></div>	
 						<br/>
-					</div>
+					<!-- </div> -->
 				</div>
 			</div>
 		
-				</section>
+			</section>
+				<div id="reservation-section">
+				<h3>Current Reservations</h1>
 				<div id="reservation-history">
-					<h1>Reservations</h1>
-					<dl>
+					
+					<div id ="single-reservation">
 						${reservations.map(reservation =>
 							`
-							<p>Restaurant Name</p>
+							<p>Restaurant Name:</p>
 							<dt>${restaurant.name</dt>
-							<p>Date</p>
+							<p>Date:</p>
 							<dt>${reservation.date}</dt>
-							<p>Time</p>
+							<p>Time:</p>
 							<dt>${reservation.time}</dt>
-							<p>Party Size</p>
+							<p>Party Size:</p>
 							<dt>${reservation.party}</dt>
 							`
 						).join("")}
 						<button>Edit</button>
 						<button>Delete</button>
-						</dl>
+					</div>
+				</div>
 				</div>
 	</body>
 	<script src="../server/home.js"></script>
