@@ -73,6 +73,14 @@ app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
 	res.render("login");
 });
 
+// app.post("/login", async (req, res) => {
+// 	let email = req.body.email;
+//   	const { data, error } = await supabase
+//     .from("User")
+// 	.select()
+// 	.match({Email: email})
+// 	console.log(data)
+// });
 app.post(
 	"/login",
 	passport.authenticate("local", {
@@ -88,22 +96,26 @@ app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-	try {
-		const salt = await bcrypt.genSalt();
-		const hashedPassword = await bcrypt.hash(req.bodpassword, salt);
-		const { data, error } = await supabase.from("User").insert([
-			{
-				Name: req.body.name,
-				Email: req.body.email,
-				Password: hashedPassword,
-			},
-		]);
-		console.log(data);
-		res.status(200).redirect("/login");
-	} catch (err) {
-		res.status(401).redirect("/register");
-	}
-});
+
+    try {
+        const salt = await bcrypt.genSalt();
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
+        const { data, error } = await supabase
+        .from("User")
+        .insert([
+            {
+                Name: req.body.name,
+                Email: req.body.email,
+                Password: hashedPassword,
+            }
+        ]);
+        console.log(data);
+        res.status(200).redirect("/login");
+    } catch (err) {
+        res.status(401).redirect("/register");
+    }
+  });
+
 
 app.post("/logout", (req, res) => {
 	req.logOut();
