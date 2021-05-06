@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../public/stylesheets/reservations.css">
+		<link rel="stylesheet" href="/stylesheets/reservations.css" />
 		<link
 			rel="stylesheet"
 			href="../spice-restaurant-free-website-template/css/style.css"
@@ -18,60 +18,93 @@
 			href="../spice-restaurant-free-website-template/materialize/css/materialize.css"
 			media="screen,projection"
 		/>
-		<link href="../spice-restaurant-free-website-template/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="../spice-restaurant-free-website-template/css/fancybox/jquery.fancybox.css" rel="stylesheet" />
-		<link href="../spice-restaurant-free-website-template/css/flexslider.css" rel="stylesheet" />
-		<link href="../spice-restaurant-free-website-template/css/style.css" rel="stylesheet" />
+		<link
+			href="../spice-restaurant-free-website-template/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="../spice-restaurant-free-website-template/css/fancybox/jquery.fancybox.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="../spice-restaurant-free-website-template/css/flexslider.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="../spice-restaurant-free-website-template/css/style.css"
+			rel="stylesheet"
+		/>
 		<title>Reservations</title>
 	</head>
 	<body>
-		<div id="wrapper" class="home-page"> 
+		<div id="wrapper" class="home-page">
 			<header>
 				<div class="navbar navbar-default navbar-static-top">
 					<div class="container">
 						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<button
+								type="button"
+								class="navbar-toggle"
+								data-toggle="collapse"
+								data-target=".navbar-collapse"
+							>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
+
 							<a class="navbar-brand" href="/"><i class="icon-info-blocks material-icons">location_on</i>reservation maker</a>
+
 						</div>
-						<div class="navbar-collapse collapse ">
+						<div class="navbar-collapse collapse">
 							<ul class="nav navbar-nav">
+
 								<li ><a class="waves-effect waves-dark" href="/">Home</a></li> 
 								<li class="active"><a class="waves-effect waves-dark" href="/reservations">Reservations</a></li>
 								<li><a class="waves-effect waves-dark" href="/logout">Sign Out</a></li>
+
 							</ul>
 						</div>
 					</div>
 				</div>
 			</header>
-		<div>
-			<h3>Reservations</h3>
-			<form id="reservation-form" method="post" action="#" class="form">
-				<input type="date" />
-				<input type="time" />
-				<select>
-					<option value="0">Party Size</option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10+</option>
-				</select>
-				<input class="location" type="text" placeholder=" City" />
-				<button onclick="(e) => sendLocation(e)" type="submit">
-					Find a Table
-				</button>
-			</form>
+			<div>
+				<h3>Reservations</h3>
+				<form id="reservation-form" method="post" action="#" class="form">
+					<input type="date" />
+					<input type="time" />
+					<select>
+						<option value="0">Party Size</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10+</option>
+					</select>
+					<input class="location" type="text" placeholder=" City" />
+					<button onclick="(e) => sendLocation(e)" type="submit">
+						Find a Table
+					</button>
+				</form>
+			</div>
+			<dl class="restaurantcardcontainer">
+				${restaurants.map(data => `
+				<div class="restaurantcard">
+					<h4 class="name1">Restaurant</h4>
+					<dt class="dtcss">${data.Name}</dt>
+					</br>
+					<h5 class="name2">Address</h5>
+					<dt class="dtcss">${data.Address},${data.City},${data.State},${data.Zip}</dt>
+				</div>
+				` ).join("")};
+			</dl>
 		</div>
-		
+
 	</body>
-	<script src="reservations2.js"></script>
+
 </html>
