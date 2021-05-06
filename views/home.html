@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../public/stylesheets/home.css" />
+		<link rel="stylesheet" href="/stylesheets/home.css" />
 		<link
 			rel="stylesheet"
 			href="../spice-restaurant-free-website-template/css/style.css"
@@ -27,7 +27,6 @@
 
 	<body>
 	<div id="wrapper" class="home-page"> 
-		<!-- start header -->
 		<header>
 			<div class="navbar navbar-default navbar-static-top">
 				<div class="container">
@@ -37,7 +36,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="home.html"><i class="icon-info-blocks material-icons">location_on</i>reservation maker</a>
+						<a class="navbar-brand" href="home.html"><i class="icon-info-blocks material-icons">location_on</i>food findr</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
@@ -52,34 +51,12 @@
 			<section class="dishes">
 				<div class="container">
 					<div class="col-md-12">
-						<div class="aligncenter"><h2 class="aligncenter">Find food near you!, ${name}</h2>
+						<div class="aligncenter"><h2 class="aligncenter">Find food near you!</h2>
 							<a id="main-button" href="/reservations" type="button">Let's Go!</a></div>	
 				</div>
 			</div>
-		
-			</section>
-				<div id="reservation-section">
-				<h3>Current Reservations</h3>
-				<div id="reservation-history">
-					
-					<div id ="single-reservation">
-						<!-- ${reservations.map(reservation =>
-							`
-							<p>Restaurant Name:</p>
-							<dt>${restaurant.name</dt>
-							<p>Date:</p>
-							<dt>${reservation.date}</dt>
-							<p>Time:</p>
-							<dt>${reservation.time}</dt>
-							<p>Party Size:</p>
-							<dt>${reservation.party}</dt>
-							`
-						).join("")} -->
-						<button>Edit</button>
-						<button>Delete</button>
-					</div>
-				</div>
-				</div>
-	</body>
-	<script src="../server/home.js"></script>
+			</section> 
+			<div id="reservation-history"></div>
+	</body> -->
+<script src="../server/home.js"></script>
 </html>
