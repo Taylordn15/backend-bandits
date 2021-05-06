@@ -1,3 +1,29 @@
+#reservation-form {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100vw;
+	height: 100px;
+	margin-left: 30px;
+}
+
+#reservation-form input,
+select,
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+	width: 150px;
+	height: 30px;
+	outline: none;
+	border: 1px solid black;
+}
+
+h3 {
+	margin: 30px;
+}
+
 body {
 	/* display: grid; */
 	height: 100vh;
