@@ -18,13 +18,17 @@ const supabase = createClient(
 );
 
 async function getUser(email) {
-	const { users, error } = await supabase.from("User").select();
-	console.log(users);
-	// const validUser = users.find(user => user.Email === email)
-	// return validUser
+	const { data, error } = await supabase.from("User").select();
+	const validUser = data.find((user) => user.Email === email);
+	return validUser;
+}
+async function getUserID(id) {
+	const { data, error } = await supabase.from("User").select();
+	const validUserID = data.find((user) => user.id === id);
+	return validUserID;
 }
 
-initializedPassport(passport, getUser);
+initializedPassport(passport, getUser, getUserID);
 //PORT
 const PORT = 5321;
 
@@ -64,7 +68,8 @@ function checkIfUserIsLoggedIn(req, res, next) {
 
 //welcome page
 app.get("/", checkAuthenticated, (req, res) => {
-	res.render("welcome", { locals: { name: req.user.name } });
+	console.log(req);
+	res.render("welcome", { locals: { name: req.user.Name } });
 });
 
 //login page
@@ -95,26 +100,22 @@ app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-
-    try {
-        const salt = await bcrypt.genSalt();
-        const hashedPassword = await bcrypt.hash(req.body.password, salt);
-        const { data, error } = await supabase
-        .from("User")
-        .insert([
-            {
-                Name: req.body.name,
-                Email: req.body.email,
-                Password: hashedPassword,
-            }
-        ]);
-        console.log(data);
-        res.status(200).redirect("/login");
-    } catch (err) {
-        res.status(401).redirect("/register");
-    }
-  });
-
+	try {
+		const salt = await bcrypt.genSalt();
+		const hashedPassword = await bcrypt.hash(req.body.password, salt);
+		const { data, error } = await supabase.from("User").insert([
+			{
+				Name: req.body.name,
+				Email: req.body.email,
+				Password: hashedPassword,
+			},
+		]);
+		console.log(data);
+		res.status(200).redirect("/login");
+	} catch (err) {
+		res.status(401).redirect("/register");
+	}
+});
 
 app.post("/logout", (req, res) => {
 	req.logOut();
