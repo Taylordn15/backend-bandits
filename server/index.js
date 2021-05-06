@@ -77,14 +77,6 @@ app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
 	res.render("login");
 });
 
-// app.post("/login", async (req, res) => {
-// 	let email = req.body.email;
-//   	const { data, error } = await supabase
-//     .from("User")
-// 	.select()
-// 	.match({Email: email})
-// 	console.log(data)
-// });
 app.post(
 	"/login",
 	passport.authenticate("local", {
@@ -128,7 +120,7 @@ app.get("/home", async (req, res) => {
 });
 
 //reservations page
-app.post("/reservation", async (req, res) => {
+app.post("/reservation", checkAuthenticated, async (req, res) => {
 	const { data, error } = await supabase.from("Reservation").insert([
 		{
 			Name: "Joey",
