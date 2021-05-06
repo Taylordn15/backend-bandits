@@ -125,6 +125,11 @@ app.post("/logout", (req, res) => {
 	res.redirect("/login");
 });
 
+app.get("/logout", (req, res) => {
+	req.logOut();
+	res.render("login");
+});
+
 // homepage
 
 app.get("/", checkAuthenticated, (req, res) => {
