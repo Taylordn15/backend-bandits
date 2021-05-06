@@ -1,9 +1,10 @@
 const fetch = require("node-fetch");
 
-const getRestaurants = async () => {
+const addRestaurants = async () => {
 	// -- Fetch Restaurant Data -- //
+
 	const getRestaurantData = await fetch(
-		"https://api.yelp.com/v3/businesses/search?term=food&location=Atlanta",
+		"https://api.yelp.com/v3/businesses/search?term=food&location=Atlanta&limit=5",
 		{
 			method: "GET",
 			headers: {
@@ -13,9 +14,11 @@ const getRestaurants = async () => {
 		}
 	);
 	const restaurantDataJson = await getRestaurantData.json();
-	const bodySpec = restaurantDataJson[0].businesses.name;
-	console.log(restaurantDataJson);
+	const restaurantName = restaurantDataJson.businesses[0].name;
+	const restaurantAddress1 = restaurantDataJson.businesses[0].location.address1;
+	const restaurantCity = restaurantDataJson.businesses[0].location.city;
+	const restaurantZip = restaurantDataJson.businesses[0].location.zip_code;
 };
-console.log(getRestaurants());
+console.log(addRestaurants());
 
 module.exports = yelpinfo;

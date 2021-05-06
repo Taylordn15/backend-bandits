@@ -19,18 +19,13 @@ const supabase = createClient(
 );
 
 async function getUser(email) {
-    const { users, error } = await supabase
-    .from("User")
-    .select()
-    console.log(users)
-    // const validUser = users.find(user => user.Email === email)
-    // return validUser
+	const { users, error } = await supabase.from("User").select();
+	console.log(users);
+	// const validUser = users.find(user => user.Email === email)
+	// return validUser
 }
 
-initializedPassport(
-    passport,
-    getUser
-);
+initializedPassport(passport, getUser);
 //PORT
 const PORT = 5321;
 
@@ -53,8 +48,6 @@ app.use(passport.session());
 app.engine("html", es6Renderer);
 app.set("views", "../views");
 app.set("view engine", "html");
-
-
 
 function checkAuthenticated(req, res, next) {
 	if (req.isAuthenticated()) {
@@ -103,6 +96,7 @@ app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
+
     try {
         const salt = await bcrypt.genSalt();
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -121,6 +115,7 @@ app.post("/register", async (req, res) => {
         res.status(401).redirect("/register");
     }
   });
+
 
 app.post("/logout", (req, res) => {
 	req.logOut();
