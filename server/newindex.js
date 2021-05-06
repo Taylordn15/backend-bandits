@@ -11,7 +11,6 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
-const yelpinfo = require("reservations.js");
 const es6Renderer = require("express-es6-template-engine");
 const initializedPassport = require("./passport-config");
 const { createClient } = require("@supabase/supabase-js");
@@ -27,7 +26,7 @@ initializedPassport(
 
 // -- Set Port -- //
 
-const PORT = 5322;
+const PORT = 5321;
 
 // -- Middleware -- //
 
@@ -50,16 +49,12 @@ app.set("view engine", "html");
 
 // - Reservation(s) Page - //
 
-app.post("/reservation", async (req, res) => {
-	const { yelpinfo } = await supabase.from("Restaurant").insert(yelpinfo);
-});
-
-app.get("/reservation", async (req, res) => {
+app.get("/reservations", async (req, res) => {
 	const { data, error } = await supabase.from("Restaurant").select();
-	console.log(data);
+	res.render("reservations", { locals: { restaurants: data } });
 });
 
-// - Listening Post - //
+// - Listening to PORT - //
 
 app.listen(PORT, () => {
 	console.log(`Your server is being hosted on localhost:${PORT}`);
