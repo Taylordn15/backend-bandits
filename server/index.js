@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
-const yelpinfo = require("reservations.js");
+// const yelpinfo = require("reservations.js");
 const es6Renderer = require("express-es6-template-engine");
 const initializedPassport = require("./passport-config");
 const { createClient } = require("@supabase/supabase-js");
@@ -80,6 +80,14 @@ app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
 	res.render("login");
 });
 
+// app.post("/login", async (req, res) => {
+// 	let email = req.body.email;
+//   	const { data, error } = await supabase
+//     .from("User")
+// 	.select()
+// 	.match({Email: email})
+// 	console.log(data)
+// });
 app.post(
 	"/login",
 	passport.authenticate("local", {
@@ -97,7 +105,7 @@ app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
 app.post("/register", async (req, res) => {
     try {
         const salt = await bcrypt.genSalt();
-        const hashedPassword = await bcrypt.hash(req.bodpassword, salt);
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
         const { data, error } = await supabase
         .from("User")
         .insert([
