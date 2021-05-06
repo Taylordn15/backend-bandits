@@ -1,14 +1,14 @@
 /* * {
   margin: 2px;
   padding: 2px; */
-  /* background-image: url("../spice-restaurant-free-website-template/img/photo-1552566626-52f8b828add9.jpeg"); */
-}
+/* background-image: url("../spice-restaurant-free-website-template/img/photo-1552566626-52f8b828add9.jpeg"); */
+
 #wrapper {
   background: url(https://bit.ly/3vKIovk);
 }
 
 .test {
-	background: url(https://bit.ly/3vKIovk);
+  background: url(https://bit.ly/3vKIovk);
 }
 /* .navbar-brand {
   display: flexbox;
