@@ -6,16 +6,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="/stylesheets/styles.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class="main-container">
 			<div class="welcome-container">
-				<h1>Food Findr</h1>
 			</div>
 
 			<div class="login-container">
-				<h1>Login</h1>
-				<form action="/login" method="post">
+				<h1 class="welcome-header">Food Findr</h1>
+				<form action="/login" method="post" class="form">
 					<input
 						type="email"
 						class="email"
@@ -32,7 +33,7 @@
 					/>
 					<button class="btn" type="submit">Login</button>
 				</form>
-				<a href="/register">Register</a>
+					<a href="/register" class="register-link">Create Account</a>
 			</div>
 		</div>
 	</body>
