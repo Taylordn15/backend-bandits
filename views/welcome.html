@@ -6,8 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link
+			rel="stylesheet"
+			href="../spice-restaurant-free-website-template/css/style.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="../spice-restaurant-free-website-template/materialize/css/materialize.css"
+			media="screen,projection"
+		/>
+		<link href="../spice-restaurant-free-website-template/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="../spice-restaurant-free-website-template/css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+		<link href="../spice-restaurant-free-website-template/css/flexslider.css" rel="stylesheet" />
+		<link href="../spice-restaurant-free-website-template/css/style.css" rel="stylesheet" />
 </head>
 <body>
+    <header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="home.html"><i class="icon-info-blocks material-icons">location_on</i>food findr</a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a class="waves-effect waves-dark" href="home.html">Home</a></li> 
+                        <li><a class="waves-effect waves-dark" href="reservations.html">Reservations</a></li>
+                        <li><a class="waves-effect waves-dark" href="login.html">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="dishes">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="aligncenter"><h2 class="aligncenter">Find food near you!, ${name}</h2>
+                    <a id="main-button" href="/reservations" type="button">Let's Go!</a></div>	
+        </div>
+    </div>
+    </section> 
     <div class="login-container">
         <h1 class="header">Welcome</h1>
         <h3 class="greeting">Hello ${name}</h3>
