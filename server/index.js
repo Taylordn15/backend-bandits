@@ -1,3 +1,5 @@
+// Packages and installation
+
 if (process.env.NODE_ENV !== "production") {
 	require("dotenv").config();
 }
@@ -17,6 +19,8 @@ const supabase = createClient(
 	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyMDA2NTU3NSwiZXhwIjoxOTM1NjQxNTc1fQ.HIBZbZyYMY7Jc1d4kxYVkESzL55qG7RqMPMzoWA1oFI"
 );
 
+// locate user information and matching to DB
+
 async function getUser(email) {
 	const { data, error } = await supabase.from("User").select();
 	const validUser = data.find((user) => user.Email === email);
@@ -29,7 +33,7 @@ async function getUserID(id) {
 }
 
 initializedPassport(passport, getUser, getUserID);
-//PORT
+
 const PORT = 5321;
 
 //middleware
@@ -52,6 +56,8 @@ app.engine("html", es6Renderer);
 app.set("views", "../views");
 app.set("view engine", "html");
 
+// checking user authentication
+
 function checkAuthenticated(req, res, next) {
 	if (req.isAuthenticated()) {
 		return next();
@@ -66,13 +72,15 @@ function checkIfUserIsLoggedIn(req, res, next) {
 	next();
 }
 
-//welcome page
+//welcome page - WILL BE DELETED?
+
 app.get("/", checkAuthenticated, (req, res) => {
 	console.log(req);
-	res.render("welcome", { locals: { name: req.user.Name } });
+	res.render("home", { locals: { name: req.user.Name } });
 });
 
 //login page
+
 app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
 	res.render("login");
 });
@@ -87,6 +95,7 @@ app.post(
 );
 
 //register page
+
 app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
 	res.render("register");
 });
@@ -97,7 +106,7 @@ app.post("/register", async (req, res) => {
 		const hashedPassword = await bcrypt.hash(req.body.password, salt);
 		const { data, error } = await supabase.from("User").insert([
 			{
-				Name: req.body.name,
+				Name: req.body.Name,
 				Email: req.body.email,
 				Password: hashedPassword,
 			},
@@ -109,18 +118,23 @@ app.post("/register", async (req, res) => {
 	}
 });
 
+// log out
+
 app.post("/logout", (req, res) => {
 	req.logOut();
 	res.redirect("/login");
 });
 
-//homepage
-app.get("/home", async (req, res) => {
-	res.render("home.html");
+// homepage
+
+app.get("/", checkAuthenticated, (req, res) => {
+	console.log(req);
+	res.render("home", { locals: { name: req.user.Name } });
 });
 
 //reservations page
-app.post("/reservation", checkAuthenticated, async (req, res) => {
+
+app.post("/reservations", checkAuthenticated, async (req, res) => {
 	const { data, error } = await supabase.from("Reservation").insert([
 		{
 			Name: "Joey",
@@ -132,15 +146,13 @@ app.post("/reservation", checkAuthenticated, async (req, res) => {
 	console.log(data);
 });
 
-app.get("/reservation", async (req, res) => {
+app.get("/reservations", async (req, res) => {
 	const { data, error } = await supabase.from("Restaurant").select();
 	console.log(data);
+	res.render("reservations.html");
 });
 
-//profile page
-app.get("/home", async (req, res) => {
-	res.render("profile");
-});
+// listening
 
 app.listen(PORT, () => {
 	console.log(`Your server is being hosted on localhost:${PORT}`);
