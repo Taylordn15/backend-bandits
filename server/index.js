@@ -9,7 +9,6 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
-// const yelpinfo = require("reservations.js");
 const es6Renderer = require("express-es6-template-engine");
 const initializedPassport = require("./passport-config");
 const { createClient } = require("@supabase/supabase-js");
