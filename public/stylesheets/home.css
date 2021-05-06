@@ -1,117 +1,70 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+/* * {
+  margin: 2px;
+  padding: 2px; */
+  /* background-image: url("../spice-restaurant-free-website-template/img/photo-1552566626-52f8b828add9.jpeg"); */
 }
-#navbar {
-	background-color: lightblue;
-	width: 100%;
-	height: 60px;
-	border: 1px darkgreen solid;
-}
-#navbar a {
-	padding: 5px;
-	margin: 5px;
-	text-decoration: none;
-	border: 1px black solid;
-	border-radius: 5px;
-}
-#nav1 {
-	display: flex;
-	flex-direction: row;
-	text-align: center;
-	float: left;
-	align-items: center;
-	margin: 10px;
-}
-#nav2 {
-	display: flex;
-	flex-direction: row;
-	text-align: center;
-	float: right;
-	align-items: center;
-	margin: 10px;
+#wrapper {
+  background: url(https://bit.ly/3vKIovk);
 }
 
-#main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	place-items: center;
-	background-color: blanchedalmond;
-	height: 350px;
-	width: 100vw;
-	border-bottom: darkgreen 1px solid;
+.test {
+	background: url(https://bit.ly/3vKIovk);
+}
+/* .navbar-brand {
+  display: flexbox;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
-#main h1 {
-	padding: 10px;
-	margin: 10px;
+.aligncenter {
+  align-items: center;
 }
 
-#main-button {
-	font-size: 20px;
-	color: black;
-	border: 1px solid darkgrey;
-	padding: 7px;
-	margin: 50px;
-	border-radius: 4px;
-	background-color: blanchedalmond;
-	text-decoration: none;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.welcome-container {
+  display: grid;
+  background: url(https://bit.ly/3nUPJWg) no-repeat center;
+  height: 100vh;
+}
+
+.welcome-header {
+  text-align: center;
+}
+
+.login-container {
+  display: grid;
+  place-items: center;
+  height: 50%;
+}
+
+.email,
+.password {
+  height: 2rem;
+  width: 12rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  height: 2rem;
 }
 
 .form {
-	/* background-color: azure; */
-	height: 200px;
-	width: 450px;
-	text-align: center;
-	padding: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
-.form input {
-	height: 30px;
-	width: 250px;
-	outline: none;
-}
-
-.form button {
-	height: 30px;
-	width: 80px;
-}
-
-#reservation-section {
-	text-align: center;
-}
-
-#featured {
-	background-color: rgba(79, 163, 216, 0.5);
-	height: 350px;
-	width: 100vw;
-}
-
-#reservation-history {
-	margin: 10px;
-	padding: 10px;
-	background-color: blanchedalmond;
-	border: 1px solid black;
-	width: 300px;
-}
-
-#single-reservation {
-	display: flex;
-	flex-direction: column;
-	margin: 5px;
-	padding: 5px;
-	align-items: center;
-}
-
-#single-reservation button {
-	width: 100px;
-	height: 30px;
-	margin: 5px;
-	padding: 5px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+.register-link {
+  text-decoration: none;
+} */
