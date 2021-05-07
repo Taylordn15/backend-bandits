@@ -7,35 +7,66 @@ body {
 
 .main-container {
   display: grid;
+  place-items: center;
   grid-template-columns: 1fr 1fr;
 }
 
 .welcome-container {
-  display: grid;
-  background: url(https://bit.ly/3nUPJWg) no-repeat center;
+  background: url(https://bit.ly/3vMXznF) no-repeat center;
   height: 100vh;
+  width: 50vw;
 }
 
 .signup {
   text-align: center;
 }
 
+.signup-flavortext {
+  text-align: center;
+}
+
 .login-container {
-  display: grid;
-  place-items: center;
-  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(248, 248, 248, 0.75);
+  height: 400px;
+  width: 400px;
+  border-radius: 5px;
 }
 
 .name,
 .email,
 .password {
   height: 2rem;
-  width: 12rem;
+  width: 15rem;
   margin-bottom: 1rem;
+  font-size: 16px;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: black 1px solid;
+  background: transparent;
 }
 
 .btn {
-  height: 2rem;
+  height: 2.5rem;
+  background: #12c2e9;
+  background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  opacity: 0.8;
+  transition: 200ms ease;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .form {
@@ -45,4 +76,8 @@ body {
 
 .login {
   text-decoration: none;
+  color: #12c2e9;
+  color: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  color: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  margin-top: 1rem;
 }
