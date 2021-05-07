@@ -65,11 +65,6 @@ body {
   flex-direction: column;
 }
 
-<<<<<<< HEAD
-.register-link {
-  text-decoration: none;
-} */
-=======
 .main-header {
 	background-image: url(../images/restaurant.jpeg);
 	height: 500px;
@@ -81,4 +76,3 @@ body {
 #find-food {
 	color: #f4f4f4;
 }
->>>>>>> 40e23b440232aa53ee4031b29a92c73f39475829
