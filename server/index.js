@@ -157,6 +157,18 @@ app.get("/reservations", checkAuthenticated, async (req, res) => {
   res.render("reservations.html");
 });
 
+// app.post("/reservations", checkAuthenticated, async (req, res) => {
+// 	const { data, error } = await supabase.from("Reservation").insert([
+// 		{
+// 			Name: "Joey",
+// 			Date: "2021-02-04",
+// 			Restaurant: "Pappadeuxs",
+// 			Party_Size: 22,
+// 		},
+// 	]);
+// 	console.log(data);
+// });
+
 // listening
 
 app.listen(PORT, () => {
