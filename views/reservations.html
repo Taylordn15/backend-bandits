@@ -70,10 +70,10 @@
 			</header>
 			<div>
 				<h3>Reservations</h3>
-				<form id="reservation-form" action="#" class="form">
-					<input type="date" />
-					<input type="time" />
-					<select>
+				<form action="/reservations" id="reservation-form" class="form" method="post">
+					<input type="date" class="name" id="name" name="date"/>
+					<input type="time" class="time" id="time"name="time"/>
+					<select class="party_size" id="party_size" name="party_size">
 						<option value="0">Party Size</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -86,7 +86,7 @@
 						<option value="9">9</option>
 						<option value="10">10+</option>
 					</select>
-					<input class="location" type="text" placeholder=" City" />
+					<input class="location" type="text" placeholder=" City" class="location" id="location" name="location"/>
 					<button class="book" type="submit">
 						Find a Table
 					</button>

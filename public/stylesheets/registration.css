@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  width: 100vw;
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -9,10 +10,11 @@ body {
   display: grid;
   place-items: center;
   grid-template-columns: 1fr 1fr;
+  height: 80vh;
 }
 
 .welcome-container {
-  background: url(https://bit.ly/3vMXznF) no-repeat center;
+  background: url(https://bit.ly/3vMXznF) no-repeat right;
   height: 100vh;
   width: 50vw;
 }
@@ -29,9 +31,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(248, 248, 248, 0.75);
+  background-color: rgba(248, 248, 248, 0.8);
   height: 400px;
   width: 400px;
+  border-radius: 5px;
+}
+
+.login-image {
+  background: url(https://bit.ly/3xNtdTU) center;
   border-radius: 5px;
 }
 
@@ -80,4 +87,18 @@ body {
   color: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
   color: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
   margin-top: 1rem;
+}
+
+/*media queries*/
+@media (max-width: 1130px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .welcome-container {
+    width: 100vw;
+    margin-bottom: 1rem;
+    background: url(https://bit.ly/3vMXznF) no-repeat center;
+  }
 }
