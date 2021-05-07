@@ -51,7 +51,7 @@
 }
 
 #main-button {
-	font-size: 20px;
+	font-size: 18px;
 	color: black;
 	border: 1px solid darkgrey;
 	padding: 7px;
@@ -59,6 +59,11 @@
 	border-radius: 4px;
 	background-color: blanchedalmond;
 	text-decoration: none;
+}
+
+#main-button:hover {
+	background-color: #8bc34a;
+	color: #f4f4f4;
 }
 
 .form {
@@ -91,11 +96,14 @@
 }
 
 #reservation-history {
+	text-align: center;
 	margin: 10px;
 	padding: 10px;
-	background-color: blanchedalmond;
-	border: 1px solid black;
-	width: 300px;
+	width: 100%;
+}
+
+#reservation-history h3 {
+	font-size: 24px;
 }
 
 #single-reservation {
@@ -126,4 +134,5 @@
 
 #find-food {
 	color: #f4f4f4;
+	margin: 40px;
 }
