@@ -24,10 +24,6 @@ h3 {
   margin: 30px;
 }
 
-/* body {
-	height: 100vh;
-} */
-
 #navbar {
   height: 10%;
   background-color: coral;
@@ -49,13 +45,7 @@ h3 {
   color: black;
   margin: 20px;
 }
-/* .restaurantcardcontainer {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	align-items: center;
-} */
+
 .restaurantcardcontainer {
   display: grid;
   grid-template-rows: 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
@@ -95,4 +85,8 @@ h3 {
 .final-book {
   margin: 20px;
   padding: 5px;
+}
+
+#reservation-header {
+	margin: 30px;
 }

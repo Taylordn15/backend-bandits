@@ -72,13 +72,6 @@ function checkIfUserIsLoggedIn(req, res, next) {
 	next();
 }
 
-//welcome page - WILL BE DELETED?
-
-app.get("/", checkAuthenticated, (req, res) => {
-	console.log(req);
-	res.render("home", { locals: { name: req.user.Name } });
-});
-
 //login page
 
 app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
@@ -111,7 +104,6 @@ app.post("/register", async (req, res) => {
 				Password: hashedPassword,
 			},
 		]);
-		console.log(data);
 		res.status(200).redirect("/login");
 	} catch (err) {
 		res.status(401).redirect("/register");
@@ -132,7 +124,7 @@ app.get("/logout", (req, res) => {
 
 // homepage
 
-app.get("/home", checkAuthenticated, async (req, res) => {
+app.get("/", checkAuthenticated, async (req, res) => {
 	const { data, error } = await supabase.from("Reservations").select();
 	res.render("home", { locals: { reservations: data } });
 });
@@ -142,6 +134,7 @@ app.get("/reservations", checkAuthenticated, async (req, res) => {
 	const { data, error } = await supabase.from("Restaurant").select();
 	res.render("reservations", { locals: { restaurants: data } });
 });
+
 
 app.post("/reservations", async (req, res) => {
 	try {
@@ -171,6 +164,7 @@ app.post("/reservations", async (req, res) => {
 // 	]);
 // 	console.log(data);
 // });
+
 
 // listening
 
