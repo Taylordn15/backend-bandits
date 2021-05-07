@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.home-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.container {
+  display: grid;
+  background: url(https://bit.ly/3nUPJWg) no-repeat center;
+  height: 100vh;
+}
+
+.signup {
+  text-align: center;
+}
+
+.login-container {
+  display: grid;
+  place-items: center;
+  height: 50vh;
+}
+
+.name,
+.email,
+.password {
+  height: 2rem;
+  width: 12rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  height: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login {
+  text-decoration: none;
+}
