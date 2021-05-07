@@ -11,7 +11,7 @@ On this website you can can register an account and make reservations to restaur
 
 ## Frame
 
-![Screen Shot 2021-05-03 at 12 45 10 PM](https://user-images.githubusercontent.com/71455657/117475458-11f9c180-af2a-11eb-8cc4-fccb50d82231.png)
+![image](https://user-images.githubusercontent.com/71455657/117480117-2c826980-af2f-11eb-8bfb-e8e0d4b81588.png)
 
 
 To create this data base we used Supabase. We were able to to store infomation from the Food Findr website into the data base as well as display information that we created in the data base and show it on Food Findr. Our data base consist of Users, reservations and restaurants. 
