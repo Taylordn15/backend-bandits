@@ -138,24 +138,22 @@ app.get("/", checkAuthenticated, (req, res) => {
 });
 
 //reservations page
-
-app.post("/reservations", checkAuthenticated, async (req, res) => {
-	const { data, error } = await supabase.from("Reservation").insert([
-		{
-			Name: "Joey",
-			Date: "2021-02-04",
-			Restaurant: "Pappadeuxs",
-			Party_Size: 22,
-		},
-	]);
-	console.log(data);
-});
-
 app.get("/reservations", async (req, res) => {
 	const { data, error } = await supabase.from("Restaurant").select();
-	console.log(data);
-	res.render("reservations.html");
+	res.render("reservations", { locals: { restaurants: data } });
 });
+
+// app.post("/reservations", checkAuthenticated, async (req, res) => {
+// 	const { data, error } = await supabase.from("Reservation").insert([
+// 		{
+// 			Name: "Joey",
+// 			Date: "2021-02-04",
+// 			Restaurant: "Pappadeuxs",
+// 			Party_Size: 22,
+// 		},
+// 	]);
+// 	console.log(data);
+// });
 
 // listening
 

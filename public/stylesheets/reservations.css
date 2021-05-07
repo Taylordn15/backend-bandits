@@ -58,7 +58,15 @@ h3 {
 	display: grid;
 	grid-template-rows: 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
 	grid-template-columns: 0.7fr 0.7fr;
+	display: none;
 }
+
+.restaurantcardcontainer2 {
+	display: grid;
+	grid-template-rows: 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+	grid-template-columns: 0.7fr 0.7fr;
+}
+
 .name1 {
 	font-family: monospace;
 	font-size: xx-large;

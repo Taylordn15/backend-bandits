@@ -115,3 +115,15 @@
 	align-items: center;
 	justify-content: center;
 }
+
+.main-header {
+	background-image: url(../images/restaurant.jpeg);
+	height: 500px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#find-food {
+	color: #f4f4f4;
+}
