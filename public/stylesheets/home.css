@@ -1,156 +1,175 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 #navbar {
-	background-color: lightblue;
-	width: 100%;
-	height: 60px;
-	border: 1px darkgreen solid;
+  background-color: lightblue;
+  width: 100%;
+  height: 60px;
+  border: 1px darkgreen solid;
 }
 #navbar a {
-	padding: 5px;
-	margin: 5px;
-	text-decoration: none;
-	border: 1px black solid;
-	border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
+  border: 1px black solid;
+  border-radius: 5px;
 }
 #nav1 {
-	display: flex;
-	flex-direction: row;
-	text-align: center;
-	float: left;
-	align-items: center;
-	margin: 10px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  float: left;
+  align-items: center;
+  margin: 10px;
 }
 #nav2 {
-	display: flex;
-	flex-direction: row;
-	text-align: center;
-	float: right;
-	align-items: center;
-	margin: 10px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  float: right;
+  align-items: center;
+  margin: 10px;
 }
 
 #main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	place-items: center;
-	background-color: blanchedalmond;
-	height: 350px;
-	width: 100vw;
-	border-bottom: darkgreen 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  place-items: center;
+  background-color: blanchedalmond;
+  height: 350px;
+  width: 100vw;
+  border-bottom: darkgreen 1px solid;
 }
 
 #main h1 {
-	padding: 10px;
-	margin: 10px;
+  padding: 10px;
+  margin: 10px;
 }
 
 #main-button {
-	font-size: 18px;
-	color: black;
-	border: 1px solid darkgrey;
-	padding: 7px;
-	margin: 50px;
-	border-radius: 4px;
-	background-color: blanchedalmond;
-	text-decoration: none;
+  font-size: 18px;
+  color: black;
+  border: 1px solid darkgrey;
+  padding: 7px;
+  margin: 50px;
+  border-radius: 4px;
+  background-color: blanchedalmond;
+  text-decoration: none;
+  transition: 200ms ease;
+  border: none;
 }
 
 #main-button:hover {
-	background-color: #8bc34a;
-	color: #f4f4f4;
+  background-color: #8bc34a;
+  color: #f4f4f4;
 }
 
 .form {
-	/* background-color: azure; */
-	height: 200px;
-	width: 450px;
-	text-align: center;
-	padding: 50px;
+  /* background-color: azure; */
+  height: 200px;
+  width: 450px;
+  text-align: center;
+  padding: 50px;
 }
 
 .form input {
-	height: 30px;
-	width: 250px;
-	outline: none;
+  height: 30px;
+  width: 250px;
+  outline: none;
 }
 
 .form button {
-	height: 30px;
-	width: 80px;
+  height: 30px;
+  width: 80px;
 }
 
 #reservation-section {
-	text-align: center;
+  text-align: center;
 }
 
 #featured {
-	background-color: rgba(79, 163, 216, 0.5);
-	height: 350px;
-	width: 100vw;
+  background-color: rgba(79, 163, 216, 0.5);
+  height: 350px;
+  width: 100vw;
 }
 
 #reservation-history {
-	text-align: center;
-	margin: 10px;
-	padding: 10px;
-	width: 100%;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  display: grid;
+  place-items: center;
 }
 
 #reservation-history h3 {
-	font-size: 24px;
+  font-size: 24px;
 }
 
 #single-reservation {
-	display: flex;
-	flex-direction: column;
-	margin: 5px;
-	padding: 5px;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+  align-items: center;
 }
 
 #single-reservation button {
-	width: 100px;
-	height: 30px;
-	margin: 5px;
-	padding: 5px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-header {
-	background-image: url(../images/restaurant.jpeg);
-	height: 500px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-color: white !important;
+  background-image: url(../images/restaurant.jpeg);
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white !important;
 }
 
 #find-food {
-	color: #f4f4f4;
-	margin: 40px;
+  color: #f4f4f4;
+  margin: 40px;
 }
 
 .reservationcardcontainer {
-	display: grid;
-	grid-template-rows: 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
-	grid-template-columns: 0.7fr 0.7fr;
+  display: grid;
+  grid-template-rows: 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+  grid-template-columns: 0.7fr 0.7fr;
 }
 
 .reservationcard {
-	margin: 1rem;
-	padding: 1rem;
-	height: 400px;
-	width: 800px;
-	background-color: #8bc34a;
-	opacity: 0.7;
-	border-radius: 15px;
-	color: black;
-	margin: 20px;
+  margin: 1rem;
+  padding: 1rem;
+  height: 550px;
+  width: 600px;
+  background-color: rgba(139, 195, 74, 0.7);
+  border-radius: 15px;
+  color: black;
+  margin: 20px;
+}
+
+.dtcss {
+  font-size: 20px;
+}
+
+.card-btn {
+  height: 3rem;
+  width: 15rem;
+  border: none;
+  margin: 1rem;
+}
+
+#find-food {
+  background-color: rgba(0, 0, 0, 0.5);
 }
