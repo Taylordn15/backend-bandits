@@ -52,7 +52,7 @@
 				<div class="container">
 					<div class="col-md-12">
 						<div class="aligncenter"><h2 class="aligncenter" id="find-food">Book reservations near you!</h2>
-							<a id="main-button" href="/reservations" type="button">FIND FOOD</a></div>	
+							<a id="main-button" href="/reservations" type="button">Make a Reservation</a></div>	
 				</div>
 			</div>
 			</section> 
@@ -61,18 +61,18 @@
 				<dl class="reservationcardcontainer">
     				${reservations.map(data => `
     				<div class="reservationcard">
-    					<h4 class="name1">Restaurant</h4>
+    					<h3 class="name1">Restaurant</h3>
     					<dt class="dtcss">${data.Restaurant}</dt>
-    					<h4 class="name2">Date</h4>
+    					<h3 class="name2">Date</h3>
     					<dt class="dtcss">${data.Date}</dt>
-    					<h4 class="name3">Time</h4>
+    					<h3 class="name3">Time</h3>
     					<dt class="dtcss">${data.Time}</dt>
-    					<h4 class="name4">Party</h4>
+    					<h3 class="name4">Party</h3>
     					<dt class="dtcss">${data.Party_Size}</dt>
-						<h4 class="name5">Reservation Under:</h4>
+						<h3 class="name5">Reservation Under:</h3>
     					<dt class="dtcss">${data.Name}</dt>
-    					<button>Edit</button>
-    					<button>Delete</button>
+    					<button class="card-btn">Edit</button>
+    					<button class="card-btn">Delete</button>
     				</div>
     				` ).join("")};
 
