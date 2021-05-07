@@ -53,7 +53,7 @@
 								<span class="icon-bar"></span>
 							</button>
 
-							<a class="navbar-brand" href="/"><i class="icon-info-blocks material-icons">location_on</i>reservation maker</a>
+							<a class="navbar-brand" href="/"><i class="icon-info-blocks material-icons">location_on</i>fo🍩d findr</a>
 
 						</div>
 						<div class="navbar-collapse collapse">
@@ -70,7 +70,7 @@
 			</header>
 			<div>
 				<h3>Reservations</h3>
-				<form id="reservation-form" method="post" action="#" class="form">
+				<form id="reservation-form" action="#" class="form">
 					<input type="date" />
 					<input type="time" />
 					<select>
@@ -87,7 +87,7 @@
 						<option value="10">10+</option>
 					</select>
 					<input class="location" type="text" placeholder=" City" />
-					<button onclick="(e) => sendLocation(e)" type="submit">
+					<button class="book" type="submit">
 						Find a Table
 					</button>
 				</form>
@@ -100,11 +100,30 @@
 					</br>
 					<h5 class="name2">Address</h5>
 					<dt class="dtcss">${data.Address},${data.City},${data.State},${data.Zip}</dt>
+					<button class="final-book" >Book Reservation</button>
 				</div>
 				` ).join("")};
+				
 			</dl>
 		</div>
 
 	</body>
+<script>
 
+	const finalBook = document.querySelector(".final-book")
+		finalBook.addEventListener("click", function (e) {	
+		window.alert("Your reservation has been booked.")
+		});
+
+	const fetchReservations = async () => {
+		const reservationContainer = await document.querySelector(".restaurantcardcontainer")
+		reservationContainer.className = "restaurantcardcontainer2";
+	}
+	const booked = document.querySelector(".book")
+	booked.addEventListener("click", function (e) {	
+		e.preventDefault();		
+		fetchReservations();
+		});
+
+</script>
 </html>
