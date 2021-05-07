@@ -132,13 +132,13 @@ app.get("/logout", (req, res) => {
 
 // homepage
 
-app.get("/", checkAuthenticated, (req, res) => {
-	console.log(req);
-	res.render("home", { locals: { name: req.user.Name } });
+app.get("/home", checkAuthenticated, async (req, res) => {
+	const { data, error } = await supabase.from("Reservations").select();
+	res.render("home", { locals: { reservations: data } });
 });
 
 //reservations page
-app.get("/reservations", async (req, res) => {
+app.get("/reservations", checkAuthenticated, async (req, res) => {
 	const { data, error } = await supabase.from("Restaurant").select();
 	res.render("reservations", { locals: { restaurants: data } });
 });
