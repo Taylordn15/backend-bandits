@@ -127,12 +127,30 @@
 .main-header {
 	background-image: url(../images/restaurant.jpeg);
 	height: 500px;
-	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-color: white !important;
 }
 
 #find-food {
 	color: #f4f4f4;
 	margin: 40px;
+}
+
+.reservationcardcontainer {
+	display: grid;
+	grid-template-rows: 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+	grid-template-columns: 0.7fr 0.7fr;
+}
+
+.reservationcard {
+	margin: 1rem;
+	padding: 1rem;
+	height: 400px;
+	width: 800px;
+	background-color: #8bc34a;
+	opacity: 0.7;
+	border-radius: 15px;
+	color: black;
+	margin: 20px;
 }
