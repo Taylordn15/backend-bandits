@@ -6,13 +6,15 @@ Introducing Food Findr! A website where you can search for restaurants in your a
 
 ## Description
 
-On this website you can register an account and make reservations to restaurants. After making an account, you will be routed to the home page where you can see all your current reservations. From here, you can go to the reservations page to make a reservation. Just enter your location, time you want to go, date and party size. You will be shown restaurants that are available to make reservations per your requirements. 
+On this website, you can register an account and book reservations to your favorites restaurants. After creating an account, you will be routed to the home page where you can view your current reservations or start a new search. At the restaurant search page, you enter your location, desired time, date and party size. A list of restaurants with availabilities will then generate and booking is only a click away!
 
 ## Frame
 
 ![Screen Shot 2021-06-26 at 2 40 04 PM](https://user-images.githubusercontent.com/71455657/123522617-4d904c80-d68c-11eb-8b13-b27c87800972.png)
 
-To store user registration and reservation information, we used Supabase. We were able to to store infomation from the Food Findr website into the data base as well as display information that we created in the database and show it on Food Findr. Our database consists of users, reservations and restaurants. 
+To store user registration and reservation information, our team used Supabase. User, restaurant and reservation information was stored with the ability to display 
+
+We were able to to store infomation from the Food Findr website into the data base as well as display information that we created in the database and show it on Food Findr. Our database consists of users, reservations and restaurants. 
 
 ## Collaborators
 
