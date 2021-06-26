@@ -18,9 +18,9 @@ To create this database, we used Supabase. We were able to to store infomation f
 
 ## collaborators
 
-PM Calvin Kling <br>
-Randy Chong
-James Walden
-Randi Reyna
+Calvin Kling (Project Manager)<br>
+Randy Chong <br>
+James Walden <br>
+Randi Reyna <br>
 Taylor Nicholas
 
