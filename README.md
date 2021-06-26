@@ -12,9 +12,7 @@ On this website, you can register an account and book reservations to your favor
 
 ![Screen Shot 2021-06-26 at 2 40 04 PM](https://user-images.githubusercontent.com/71455657/123522617-4d904c80-d68c-11eb-8b13-b27c87800972.png)
 
-To store user registration and reservation information, our team used Supabase. User, restaurant and reservation information was stored with the ability to display 
-
-We were able to to store infomation from the Food Findr website into the data base as well as display information that we created in the database and show it on Food Findr. Our database consists of users, reservations and restaurants. 
+To store user registration and reservation information, our team used Supabase. User, restaurant and reservation information was stored and the necessary information was displayed throughout Food Findr. Authentication was completed using passport. 
 
 ## Collaborators
 
