@@ -1,6 +1,6 @@
 # Food Findr
 
-Welcome to our back end project. Food Findr is a website where you can search for restaurants in your area and make reservations for them.
+Introducing Food Findr! A website where you can search for restaurants in your area and book reservations.
 
 ![image000000-1](https://user-images.githubusercontent.com/71455657/123522569-fd18ef00-d68b-11eb-92aa-863ad6a0cd13.png)
 
